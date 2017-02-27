@@ -1,0 +1,44 @@
+/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk -miphoneos-version-min=7.0 -I/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/include -arch arm64  -DRTMPDUMP_VERSION=\"v2.4\" -DUSE_OPENSSL  -O2 -fPIC   -c -o rtmp.o rtmp.c
+rtmp.c:192:13: warning: comparison of constant 18446744073709551597 with expression of type 'uint32_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+  if (nSize > SIZE_MAX - RTMP_MAX_HEADER_SIZE)
+      ~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rtmp.c:1905:1: warning: unused variable 'av_record' [-Wunused-const-variable]
+SAVC(record);
+^
+rtmp.c:1559:35: note: expanded from macro 'SAVC'
+#define SAVC(x) static const AVal av_##x = AVC(#x)
+                                  ^
+<scratch space>:107:1: note: expanded from here
+av_record
+^
+rtmp.c:2907:19: warning: unused variable 'av_NetConnection_Connect_Rejected' [-Wunused-const-variable]
+static const AVal av_NetConnection_Connect_Rejected =
+                  ^
+3 warnings generated.
+/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk -miphoneos-version-min=7.0 -I/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/include -arch arm64  -DRTMPDUMP_VERSION=\"v2.4\" -DUSE_OPENSSL  -O2 -fPIC   -c -o log.o log.c
+/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk -miphoneos-version-min=7.0 -I/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/include -arch arm64  -DRTMPDUMP_VERSION=\"v2.4\" -DUSE_OPENSSL  -O2 -fPIC   -c -o amf.o amf.c
+In file included from amf.c:33:
+./bytes.h:74:2: warning: "Float word order not defined, assuming the same as byte order!" [-W#warnings]
+#warning "Float word order not defined, assuming the same as byte order!"
+ ^
+1 warning generated.
+/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk -miphoneos-version-min=7.0 -I/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/include -arch arm64  -DRTMPDUMP_VERSION=\"v2.4\" -DUSE_OPENSSL  -O2 -fPIC   -c -o hashswf.o hashswf.c
+/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk -miphoneos-version-min=7.0 -I/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/include -arch arm64  -DRTMPDUMP_VERSION=\"v2.4\" -DUSE_OPENSSL  -O2 -fPIC   -c -o parseurl.o parseurl.c
+/usr/bin/ar rs librtmp.a rtmp.o log.o amf.o hashswf.o parseurl.o
+ar: creating archive librtmp.a
+/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch arm64 -dynamiclib -twolevel_namespace -undefined dynamic_lookup -fno-common -headerpad_max_install_names -install_name /usr/local/lib/librtmp.1.dylib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk -miphoneos-version-min=7.0 -L/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/lib -arch arm64 -o librtmp.1.dylib rtmp.o log.o amf.o hashswf.o parseurl.o  -lssl -lcrypto -lz 
+ld: warning: -undefined dynamic_lookup is deprecated on iOS
+ln -sf librtmp.1.dylib librtmp.dylib
+sed -e "s;@prefix@;/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk;" -e "s;@libdir@;/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib;" \
+		-e "s;@VERSION@;v2.4;" \
+		-e "s;@CRYPTO_REQ@;libssl,libcrypto;" \
+		-e "s;@PUBLIC_LIBS@;;" \
+		-e "s;@PRIVATE_LIBS@;;" librtmp.pc.in > librtmp.pc
+mkdir -p /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/include/librtmp /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib/pkgconfig /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/man/man3 /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib
+cp amf.h http.h log.h rtmp.h /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/include/librtmp
+cp librtmp.a /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib
+cp librtmp.pc /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib/pkgconfig
+cp librtmp.3 /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/man/man3
+cp librtmp.1.dylib /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib
+cd /Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib; ln -sf librtmp.1.dylib librtmp.dylib
+rm -f *.o *.a *.so *.so.1 librtmp.pc

@@ -1,0 +1,13 @@
+prefix=/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk
+exec_prefix=${prefix}
+libdir=/Users/user/Documents/workspace_ios/WCLRecordVideo/WCLRecordVideo/FFmpeg-iOS-build-script/librtmp/librtmp-iOS/build/librtmp-iPhoneOS10.1-arm64.sdk/lib
+incdir=${prefix}/include
+
+Name: librtmp
+Description: RTMP implementation
+Version: v2.4
+Requires: libssl,libcrypto
+URL: http://rtmpdump.mplayerhq.hu
+Libs: -L${libdir} -lrtmp -lz 
+Libs.private: 
+Cflags: -I${incdir}
